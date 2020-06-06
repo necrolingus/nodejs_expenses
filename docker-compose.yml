@@ -1,0 +1,20 @@
+version: "3"
+services:
+  app:
+    image: node:lts-alpine3.11
+    container_name: nodejs_expenses
+    restart: always
+    volumes:
+      - ~/nodejs_expenses:/app
+    working_dir: /app
+    environment:
+      - NODE_ENV=development
+      - MONGO_INITDB_DATABASE=${MONGO_INITDB_DATABASE}
+      - MONGO_INITDB_USERNAME=${MONGO_INITDB_USERNAME}
+      - MONGO_INITDB_PASSWORD=${MONGO_INITDB_PASSWORD}
+      - MONGO_CONTAINER_NAME=${MONGO_CONTAINER_NAME}
+      - TOKEN_VALUE=${TOKEN_VALUE}
+    ports:
+      - "0.0.0.0:3001:3001"
+    command: npm run dev
+ 
