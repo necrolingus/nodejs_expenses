@@ -1,9 +1,11 @@
 # nodejsexpenses
 Connect to mongo container user portainer or other means
 
+### Case is important for the DB name
+
 mongo --username xxx --password xxx
 
-use Expenses
+use expenses
 
-db.createUser({user:"xxx",pwd:"xxx",roles:[{role: "readWrite" , db:"Expenses"}]},{w:"majority",wtimeout:5000})
+db.createUser({user:"xxx",pwd:"xxx",roles:[{role: "readWrite" , db:"expenses"}]},{w:"majority",wtimeout:5000})
 
