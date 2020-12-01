@@ -36,3 +36,4 @@ services:
     volumes:
       - ~/mongodb/mongodb-data:/data/db
       - ~/mongodb/init_db/:/docker-entrypoint-initdb.d/
+      - ~/mongodb/mongodb_config/mongod.conf:/etc/mongod.conf
